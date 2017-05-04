@@ -6,7 +6,7 @@ from twilio.rest import Client
 
 client = Client('ACb89307719aa8043871f9912452ef21c6','2f56bc2c9d8ae27afa3baf74fb46f0cb')
 
-victim = "+12172763253"
+victim = ""
 
 def job1():
 	client.messages.create(from_="+12175763259",to=victim,body="NOON")

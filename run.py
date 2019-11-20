@@ -16,6 +16,8 @@ client = Client('ACb89307719aa8043871f9912452ef21c6', \
 
 days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
+me = ""
+
 @app.route('/sms', methods=['POST'])
 def sms():
     number = request.form['From']
@@ -42,7 +44,7 @@ def sms():
     	response = "Yes this is dumb. Yes I should have been studying for finals instead of making this. Hope you like it :)"
     resp.message(response)
     fwd_msg = "Her response was: " + r
-    client.messages.create(from_="+12175763259",to="+12178202901",body=fwd_msg)
+    client.messages.create(from_="+12175763259",to=me,body=fwd_msg)
     return str(resp)
                           
 if __name__ == '__main__':
